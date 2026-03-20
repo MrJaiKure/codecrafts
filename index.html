@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCrafts · formal software solutions</title>
+    <!-- Google Fonts & Font Awesome for clean, professional icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfdff;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* header / navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #151516;
+            background-color: #ffffff;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0a2540;
+        }
+        .logo span {
+            color: #2b7e7c;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #334155;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #0f5c5a;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #1e4a4a;
+            background: transparent;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #1e4a4a;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-size: 0.95rem;
+        }
+        .btn-outline:hover {
+            background-color: #1e4a4a;
+            color: white;
+        }
+
+        /* hero / overview */
+        .hero {
+            padding: 5rem 0 4rem 0;
+            background: linear-gradient(145deg, #ffffff 0%, #f4f8fc 100%);
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 400px;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0b2b3c;
+            margin-bottom: 1.5rem;
+        }
+        .hero-content .accent {
+            color: #246b6a;
+            border-bottom: 3px solid rgba(36,107,106,0.25);
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #2d3c4b;
+            max-width: 550px;
+            margin-bottom: 2rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .stat-item p:first-child {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #1c4e4d;
+        }
+        .hero-image {
+            flex: 1 1 300px;
+            background: #d9e9ec;
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #174b4a;
+            box-shadow: 0 20px 30px -10px rgba(0,60,60,0.15);
+        }
+        .hero-image i {
+            font-size: 5rem;
+            color: #215d5b;
+            margin-bottom: 1rem;
+        }
+        .hero-image h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        /* section general */
+        section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a2e3f;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            color: #446a7a;
+            max-width: 700px;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        /* about + overview merged as requested, but we build two distinct blocks: about + what we do */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: #2d4255;
+            font-size: 1.1rem;
+        }
+        .about-highlight {
+            background-color: #f0f6f9;
+            padding: 2rem;
+            border-radius: 28px;
+            border-left: 8px solid #2b7e7c;
+        }
+        .about-highlight h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1c4e4d;
+        }
+
+        /* what we do — services cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 10px 25px -12px rgba(0,40,40,0.1);
+            transition: transform 0.2s, box-shadow 0.25s;
+            border: 1px solid #eaf0f6;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 35px -14px rgba(20,80,90,0.15);
+            border-color: #bcd6dc;
+        }
+        .service-icon {
+            font-size: 2.2rem;
+            color: #1d6d6b;
+            margin-bottom: 1.4rem;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #163b47;
+        }
+        .service-card p {
+            color: #3b5568;
+        }
+
+        /* solutions detail — website dev, deployment, handling */
+        .solutions-showcase {
+            background: #f6fafd;
+            border-radius: 40px;
+            padding: 3rem 2.5rem;
+            margin-top: 2rem;
+        }
+        .solutions-showcase h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0a3b3a;
+            margin-bottom: 2.5rem;
+        }
+        .solutions-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+        .solution-item {
+            flex: 1 1 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 32px;
+            box-shadow: 0 8px 16px -12px #1049491a;
+        }
+        .solution-item i {
+            font-size: 2.8rem;
+            color: #1f6d6b;
+            margin-bottom: 1rem;
+        }
+        .solution-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+            color: #133c3b;
+        }
+        .solution-item p {
+            color: #476c7a;
+        }
+
+        /* contact section */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            background: white;
+            border-radius: 40px;
+            padding: 3rem;
+            box-shadow: 0 12px 30px -12px rgba(30,60,70,0.12);
+        }
+        .contact-info {
+            flex: 1 1 250px;
+        }
+        .contact-info h4 {
+            font-size: 1.8rem;
+            color: #0e3d3c;
+            margin-bottom: 1.5rem;
+        }
+        .contact-detail {
+            margin: 1.8rem 0;
+        }
+        .contact-detail i {
+            width: 32px;
+            color: #1b6b68;
+        }
+        .contact-form {
+            flex: 2 1 350px;
+        }
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1.5px solid #dde7ed;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #318281;
+            box-shadow: 0 0 0 3px rgba(49,130,129,0.2);
+        }
+        .btn-primary {
+            background: #1a5553;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 8px 14px -8px #1a5553a0;
+        }
+        .btn-primary:hover {
+            background: #0e403f;
+        }
+
+        /* google form redirect button */
+        .google-form-cta {
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+        .google-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #1e4a4a;
+            color: white;
+            padding: 1.2rem 3.5rem;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid #1e4a4a;
+            box-shadow: 0 12px 22px -14px #0b3535;
+        }
+        .google-btn i {
+            font-size: 1.8rem;
+        }
+        .google-btn:hover {
+            background: white;
+            color: #1e4a4a;
+            border-color: #1e4a4a;
+            transform: scale(1.02);
+        }
+
+        /* footer */
+        .footer {
+            border-top: 1px solid #dfe9f0;
+            padding: 2rem 0;
+            color: #496a78;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">CodeCrafts<span>.</span></div>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#about">About</a>
+                <a href="#services">What we do</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#contact">Contact</a>
+                <button class="btn-outline" onclick="window.location.href='https://forms.gle/7Z7DMxZGWnL7MfHbA'">Get in touch</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Overview section (hero) -->
+<section id="overview">
+    <div class="container hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>We craft <span class="accent">software excellence</span> for modern business</h1>
+                <p class="hero-desc">CodeCrafts delivers robust, scalable, and future-proof software solutions. From conception to deployment and beyond — we are your reliable tech partner.</p>
+                <div class="hero-stats">
+                    <div class="stat-item"><p>50+</p><p>projects shipped</p></div>
+                    <div class="stat-item"><p>98%</p><p>client satisfaction</p></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-code"></i>
+                <h3>overview</h3>
+                <p style="margin-top: 1rem;">End‑to‑end software engineering, cloud deployment & 24/7 handling.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About & what we do combined (about first) -->
+<section id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title">About CodeCrafts</h2>
+                <p>Founded in 2018, CodeCrafts has grown into a trusted partner for enterprises and startups alike. We merge technical precision with business acumen, delivering software that drives real impact. Our team of senior engineers, architects, and creatives share a passion for clean code and elegant solutions.</p>
+                <p>We believe in long‑term relationships — we don’t just build and leave; we stay, handle, and continuously improve your digital products.</p>
+                <div style="margin-top: 2rem;"><i class="fas fa-check-circle" style="color:#257e7c;"></i> ISO 27001 certified &nbsp;&nbsp; <i class="fas fa-check-circle" style="color:#257e7c;"></i> GDPR compliant</div>
+            </div>
+            <div class="about-highlight">
+                <h4><i class="fas fa-bullseye" style="margin-right: 10px;"></i> our mission</h4>
+                <p>To craft reliable, maintainable software that becomes a competitive advantage for our clients. We combine formal methodology with creative engineering.</p>
+                <hr style="margin: 1.5rem 0; border: 1px solid #c3dde0;">
+                <p><strong>› 5+ years on the market</strong><br>› 30+ team members (and growing)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What we do (services) -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <p class="section-sub">Comprehensive software services — from ideation to live environment and beyond.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Web development</h3>
+                <p>Custom web applications, portals, and e‑commerce platforms with modern stacks (React, Vue, Node, .NET).</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <h3>Deployment & DevOps</h3>
+                <p>Automated CI/CD, cloud infrastructure (AWS, Azure, GCP), containerization, and zero‑downtime releases.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
+                <h3>Website handling</h3>
+                <p>Maintenance, performance monitoring, security patches, and 24/7 support — we keep your site flawless.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile solutions</h3>
+                <p>Cross‑platform and native apps that integrate seamlessly with your backend.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed software solutions: website dev, deployment, handling -->
+<section id="solutions">
+    <div class="container solutions-showcase">
+        <h3>⸻  core software solutions  ⸻</h3>
+        <div class="solutions-items">
+            <div class="solution-item">
+                <i class="fas fa-window-maximize"></i>
+                <h4>website dev</h4>
+                <p>Responsive, high‑performance corporate sites, portals, and custom web apps.</p>
+            </div>
+            <div class="solution-item">
+                <i class="fas fa-rocket"></i>
+                <h4>deployment</h4>
+                <p>Streamlined launch on AWS, Netlify, VPS or Kubernetes — tailored to your stack.</p>
+            </div>
+            <div class="solution-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4>website handling</h4>
+                <p>Proactive monitoring, backups, updates, and security hardening.</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2.8rem; color: #215d5b;"><i class="fas fa-arrow-circle-right"></i> Also: cloud migration, legacy modernization, and IT consulting.</p>
+    </div>
+</section>
+
+<!-- Contact section + embedded style form (visual, not functional) and below: Google form button -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Formal contact</h2>
+        <div class="contact-row">
+            <div class="contact-info">
+                <h4>Let’s talk</h4>
+                <p>Reach out using the form, or through the channels below. We usually reply within one business day.</p>
+                <div class="contact-detail"><i class="fas fa-map-pin"></i>  42 Lime Street, London EC3M 7AY</div>
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i>  +44 20 7946 0138</div>
+                <div class="contact-detail"><i class="fas fa-envelope"></i>  hello@codecrafts.dev</div>
+            </div>
+            <div class="contact-form">
+                <form id="dummyContactForm" onsubmit="event.preventDefault(); alert('📬 Thanks for your interest. (Demo — now use the big Google Form button below!)');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Business email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="3" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google form redirect section (when click → redirect to google form) -->
+<section id="googleFormSection" style="padding-top: 0;">
+    <div class="container google-form-cta">
+        <a href="https://forms.gle/7Z7DMxZGWnL7MfHbA" 
+           class="google-btn" 
+           target="_blank" 
+           rel="noopener noreferrer">
+           <i class="fab fa-google"></i> Open contact form (Google)
+        </a>
+        <p style="margin-top: 1.5rem; color: #44677a;">* you’ll be redirected to a secure Google form to leave your details</p>
+        <!-- Note: this link uses a placeholder. In production replace with your real Google Form URL. -->
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 CodeCrafts — software solutions, formal & reliable. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- tiny JavaScript to make the button feel alive + smooth scroll -->
+<script>
+    (function() {
+        // smooth anchor scrolling (just for better UX)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Additional: the big google button is a real link, but we can track a demo message (optional)
+        const googleBtn = document.querySelector('.google-btn');
+        if(googleBtn) {
+            googleBtn.addEventListener('click', function(e) {
+                // just to illustrate we can intercept, but we let the redirect happen.
+                // Uncomment next line if you want to simulate alert before redirect (but then redirect may be blocked)
+                // e.preventDefault();  alert('Redirecting to Google Form (demo — change the link in code)');
+                // In a real scenario, we let the href work. We'll just show a console message.
+                console.log('Redirecting to google form (replace the action URL).');
+            });
+        }
+    })();
+</script>
+
+<!-- note: the google form link is a placeholder — replace with your real form url.  -->
+</body>
+</html>
+
+<!-- {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ViewObjectsInBucket",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::codecrafthosting/*"
+        }
+    ]
+} -->
