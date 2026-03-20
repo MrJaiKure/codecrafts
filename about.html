@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · CodeCrafts</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fbfdff;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2540;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1e4a4a;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #0b2b3c;
+        }
+
+        .hero p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #476c7a;
+        }
+
+        /* About Content */
+        .about {
+            padding: 3rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .highlight {
+            background: #f0f6f9;
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 6px solid #2b7e7c;
+        }
+
+        /* Cards */
+        .cards {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: #1e4a4a;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="container">
+    <div class="navbar">
+        <div class="logo">CodeCrafts.</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/WhatWeDo.html">What We Do</a>
+            <a href="/carrers.html">Careers</a>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>About CodeCrafts</h1>
+    <p>We build scalable, reliable, and modern software solutions.</p>
+</section>
+
+<!-- About Section -->
+<section class="about container">
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>CodeCrafts is a modern software company focused on delivering high-quality web, cloud, and DevOps solutions.</p>
+            <p>We help startups and enterprises build scalable applications with clean architecture and strong performance.</p>
+            <p>Our goal is to create long-term partnerships and deliver value beyond code.</p>
+        </div>
+
+        <div class="highlight">
+            <h3>Our Mission</h3>
+            <p>To craft powerful digital solutions that drive business growth and innovation.</p>
+            <br>
+            <p><strong>✔ 50+ Projects</strong></p>
+            <p><strong>✔ 5+ Years Experience</strong></p>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">
+            <i class="fas fa-code"></i>
+            <h3>Clean Code</h3>
+            <p>We follow best practices and scalable architecture.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Ready</h3>
+            <p>Deployments on AWS, Docker, and CI/CD pipelines.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Strong Team</h3>
+            <p>Experienced developers and engineers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div class="footer">
+    © 2026 CodeCrafts · About Page
+</div>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers · CodeCrafts</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfdff;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0a2540;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1e4a4a;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #0b2b3c;
+        }
+
+        .hero p {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #446a7a;
+        }
+
+        /* Section */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #0a2e3f;
+        }
+
+        /* Jobs Grid */
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid #eaf0f6;
+            box-shadow: 0 10px 25px -12px rgba(0,40,40,0.1);
+            transition: all 0.25s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -15px rgba(20,80,90,0.15);
+        }
+
+        .job-card i {
+            font-size: 2rem;
+            color: #1e4a4a;
+            margin-bottom: 1rem;
+        }
+
+        .job-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #163b47;
+        }
+
+        .job-meta {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .job-card p {
+            font-size: 0.95rem;
+            color: #3b5568;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 30px;
+            background: #1e4a4a;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .apply-btn:hover {
+            background: #0e403f;
+        }
+
+        /* CTA Section */
+        .cta {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            background: #1e4a4a;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background: white;
+            color: #1e4a4a;
+            border: 2px solid #1e4a4a;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            border-top: 1px solid #e5e7eb;
+            padding: 2rem 0;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">CodeCrafts.</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/WhatWeDo.html">What we do</a>
+            <a href="/carrers.html">Careers</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Join Our Team</h1>
+        <p>Work on real-world projects and grow with modern technologies.</p>
+    </section>
+
+    <!-- Jobs -->
+    <h2 class="section-title">Open Positions</h2>
+
+    <div class="jobs">
+
+        <div class="job-card">
+            <i class="fas fa-code"></i>
+            <h3>Frontend Developer</h3>
+            <div class="job-meta">Remote · Internship / Full-time</div>
+            <p>Build modern UI using React, Tailwind, and scalable architecture.</p>
+            <a href="https://forms.gle/7Z7DMxZGWnL7MfHbA" target="_blank" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <i class="fas fa-server"></i>
+            <h3>Backend Developer</h3>
+            <div class="job-meta">Remote · Internship / Full-time</div>
+            <p>Design APIs, work with databases, and build scalable backend systems.</p>
+            <a href="https://forms.gle/7Z7DMxZGWnL7MfHbA" target="_blank" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <i class="fas fa-cloud"></i>
+            <h3>DevOps Engineer</h3>
+            <div class="job-meta">Remote · Internship</div>
+            <p>Work with AWS, Docker, CI/CD pipelines, and cloud infrastructure.</p>
+            <a href="https://forms.gle/7Z7DMxZGWnL7MfHbA" target="_blank" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>UI/UX Designer</h3>
+            <div class="job-meta">Remote · Internship</div>
+            <p>Create intuitive designs and improve user experience.</p>
+            <a href="https://forms.gle/7Z7DMxZGWnL7MfHbA" target="_blank" class="apply-btn">Apply Now</a>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <a href="https://forms.gle/7Z7DMxZGWnL7MfHbA" target="_blank">
+            Apply via Google Form
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 CodeCrafts — Careers
+    </div>
+</div>
+
+</body>
+</html>

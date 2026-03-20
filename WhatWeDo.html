@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Do · CodeCrafts</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fbfdff;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2540;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1e4a4a;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #0b2b3c;
+        }
+
+        .hero p {
+            margin-top: 1rem;
+            color: #476c7a;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: #1e4a4a;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: #163b47;
+        }
+
+        .card p {
+            color: #3b5568;
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .step {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            width: 220px;
+            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.1);
+        }
+
+        .step h4 {
+            color: #1e4a4a;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="container">
+    <div class="navbar">
+        <div class="logo">CodeCrafts.</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/WhatWeDo.html">What We Do</a>
+            <a href="/carrers.html">Careers</a>
+        </div>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>What We Do</h1>
+    <p>End-to-end software development, deployment, and maintenance services.</p>
+</section>
+
+<!-- Services -->
+<div class="container">
+    <div class="services">
+
+        <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Development</h3>
+            <p>We build modern, responsive, and scalable web applications using React, Node.js, and modern frameworks.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <h3>Deployment & DevOps</h3>
+            <p>CI/CD pipelines, Docker, AWS deployment, and cloud infrastructure setup for seamless delivery.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-server"></i>
+            <h3>Backend Systems</h3>
+            <p>Robust backend APIs, database design, and scalable server-side architecture.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Security & Maintenance</h3>
+            <p>We handle monitoring, security patches, backups, and ensure your system runs smoothly.</p>
+        </div>
+
+    </div>
+
+    <!-- Process -->
+    <div class="process">
+        <h2>Our Process</h2>
+
+        <div class="steps">
+            <div class="step">
+                <h4>1. Planning</h4>
+                <p>Understanding your business needs.</p>
+            </div>
+
+            <div class="step">
+                <h4>2. Development</h4>
+                <p>Building scalable and clean solutions.</p>
+            </div>
+
+            <div class="step">
+                <h4>3. Deployment</h4>
+                <p>Launching on cloud platforms.</p>
+            </div>
+
+            <div class="step">
+                <h4>4. Support</h4>
+                <p>Continuous monitoring and updates.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    © 2026 CodeCrafts · What We Do
+</div>
+
+</body>
+</html>
